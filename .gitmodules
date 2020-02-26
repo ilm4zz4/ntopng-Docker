@@ -1,0 +1,9 @@
+[submodule "ntopng"]
+	path = ntopng
+	url = git@github.com:ntop/ntopng.git
+[submodule "nDPI"]
+	path = nDPI
+	url = git@github.com:ntop/nDPI.git
+[submodule "openssl"]
+	path = openssl
+	url = git@github.com:openssl/openssl.git
