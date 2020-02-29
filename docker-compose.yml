@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  ntopng:
+    image: ntopng
+    command: "entrypoint.sh"
+    network_mode: host
+    ports:
+      - "192.168.1.252:3000:3000"
+    volumes:
+      - ./data:/workspace/data
+    restart: unless-stopped
+

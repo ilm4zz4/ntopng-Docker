@@ -1,0 +1,41 @@
+FROM ubuntu:19.10 
+
+RUN apt-get update && \
+    apt-get install -y \
+	autoconf \
+	autogen \
+	automake \
+	bison \
+	build-essential \
+	debhelper \
+	dkms \
+	dpkg-sig \
+	flex \
+	geoipupdate \
+	git \
+	libcairo2-dev \
+	libcap-dev \
+	libcurl4-openssl-dev \
+	libhiredis-dev \
+	libjson-c-dev \
+	libldap2-dev \
+	libmaxminddb-dev \
+	libmysqlclient-dev \
+	libnetfilter-conntrack-dev \
+	libnetfilter-queue-dev \
+	libpango1.0-dev \
+	libpcap-dev \
+	libreadline-dev \
+	librrd-dev \
+	libsqlite3-dev \
+	libssl-dev \
+	libtool \
+	libtool-bin \
+	libxml2-dev \
+	libzmq3-dev \
+	pkg-config \
+	rrdtool \
+	wget \
+	zlib1g-dev \
+        redis-server 
+

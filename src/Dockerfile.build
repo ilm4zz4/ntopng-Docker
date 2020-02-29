@@ -1,0 +1,4 @@
+FROM ntopng-base:latest 
+WORKDIR /workspace
+COPY . /workspace
+RUN cd ntopng && ./autogen.sh && ./configure  && make -j3 
