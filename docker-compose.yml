@@ -3,7 +3,7 @@ version: '3'
 services:
 
   ntopng:
-    image: ntopng
+    image: ilm4zz4/ntopng:2.8.1_dpi_3.0_ssl_1_0_2u
     command: "entrypoint.sh"
     network_mode: host
     ports:
