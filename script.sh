@@ -11,13 +11,13 @@ Usage: bash $0 [-b <string> -c <string> -a <string> ]
 while getopts ":b:c:a" o; do
     case "${o}" in
         b)
-	    cd base && docker build -t ntopng-base -f Dockerfile.base . && cd ..
+	    cd base && docker build -t ilm4zz4/ntopng:base -f Dockerfile.base . && cd ..
             ;;
         c)
-            cd src && docker build -t ntopng-build -f Dockerfile.build . && cd ..
+            cd src && docker build -t ilm4zz4/ntopng:build -f Dockerfile.build . && cd ..
             ;;
         a)
-            cd app && docker build -t ntopng -f Dockerfile.app .
+            cd app && docker build -t ilm4zz4/ntopng -f Dockerfile.app .
             ;;
         *)
             usage
