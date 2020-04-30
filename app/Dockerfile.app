@@ -1,4 +1,5 @@
-FROM ntopng-build 
+FROM ilm4zz4/ntopng:build_2.8.1_dpi_3.0_ssl_1_0_2u
+
 
 RUN mkdir /workspace/data
 RUN useradd -p $(openssl passwd -1 pippo) ntopng
@@ -9,4 +10,4 @@ COPY ./entrypoint.sh /workspace/entrypoint.sh
 RUN chmod +x /workspace/entrypoint.sh
 RUN ln -s /workspace/entrypoint.sh  /bin/entrypoint.sh
 
-#ENTRYPOINT ["bash entrypoint.sh"]
+ENTRYPOINT ["bash entrypoint.sh"]

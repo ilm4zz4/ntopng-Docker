@@ -1,4 +1,5 @@
-FROM ntopng-base:latest 
+FROM ilm4zz4/ntopng:base
+
 WORKDIR /workspace
 COPY . /workspace
 RUN cd ntopng && ./autogen.sh && ./configure  && make -j3 
