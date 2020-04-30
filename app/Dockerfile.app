@@ -1,4 +1,4 @@
-FROM ilm4zz4/ntopng:build_2.8.1_dpi_3.0_ssl_1_0_2u
+FROM ilm4zz4/ntopng:build_3.8.1_dpi_3.0_ssl_1_0_2u
 
 
 RUN mkdir /workspace/data
