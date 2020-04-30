@@ -1,41 +1,32 @@
 
 usage() {  echo -e " 
-Usage: bash $0 [-b <string> -c <string> -a <string> ] 
+Usage: bash $0 [-b -c  -a] 
    -b : create a base image
    -c : build ntopng
    -a : create application image
-   -t : tag 
-   
    "; 
    exit 2 1>&2; exit 1; }
 
 BUILD_BASE_IMAGE="0"
-BUILD_NTOPNG=0
+BUILD_NTOPNG="0"
 CREATE_APP_NTOPNG="0"
 
-if [ "$#" -ne 1 ]; then
+if [ "$#" -lt 1 ]; then
    usage
    exit 1
 fi
 
-while getopts ":b:c:a:t:r" o; do
+while getopts ":abc" o; do
     case "${o}" in
+        a)
+            CREATE_APP_NTOPNG="1"
+            ;;
         b)
             BUILD_BASE_IMAGE="1"
             ;;
         c)
-	    BUILD_NTOPNG="1"
-            ;;
-        a)
-            CREATE_APP_NTOPNG="1"
-            ;;
-
-        t)
-            TAG=${OPTARG}
-            ;;
-        r)
-            iRTAG=${OPTARG}
-            ;;
+	        BUILD_NTOPNG="1"
+            ;;      
         *)
             usage
             ;;
