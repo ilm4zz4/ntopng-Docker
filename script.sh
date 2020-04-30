@@ -45,12 +45,12 @@ fi
 
 if [ "$BUILD_NTOPNG" == "1" ]
 then 
-	cd src && docker build -t ilm4zz4/ntopng:build_3.8.1_dpi_3.0_ssl_1_0_2u -f Dockerfile.build . && cd ..
+	cd src && docker build -t ilm4zz4/ntopng:build_4.0_dpi_3.0_ssl_1_0_2u -f Dockerfile.build . && cd ..
 fi
 
 #Create App
 if [ "$CREATE_APP_NTOPNG" == "1" ]
 then 
-        cd app && docker build -t ilm4zz4/ntopng:3.8.1_dpi_3.0_ssl_1_0_2u  -f Dockerfile.app .
+        cd app && docker build -t ilm4zz4/ntopng:4.0_dpi_3.0_ssl_1_0_2u  -f Dockerfile.app .
 fi
 
