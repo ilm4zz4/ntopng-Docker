@@ -1,0 +1,15 @@
+ARG base_openssl_version
+FROM ilm4zz4/ntopng:${base_openssl_version}
+
+ARG ntopng_version
+ARG ndpi_version
+
+ENV NTOPNG_VERSION=${ntopng_version}
+ENV NDPI_VERSION=${ndpi_version}
+
+WORKDIR /workspace
+
+RUN echo ${NTOPNG_VERSION}
+RUN git clone -b ${NTOPNG_VERSION} https://github.com/ntop/ntopng.git
+RUN git clone -b ${NDPI_VERSION} https://github.com/ntop/nDPI.git 
+RUN cd ntopng && ./autogen.sh && ./configure  && make -j3 && make install && cd .. && rm -rf ntopng
