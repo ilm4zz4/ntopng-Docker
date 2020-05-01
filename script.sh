@@ -42,7 +42,7 @@ shift $((OPTIND-1))
 
 openssl_version=OpenSSL_1_0_2u
 ndpi_version=3.0
-ntopng_version=4.0
+ntopng_version=3.8.1
 
 # BUild base image
 if [ "$BUILD_BASE_IMAGE" == "1" ]
