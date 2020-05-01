@@ -1,4 +1,10 @@
 #!/bin/bash
 
+WORKDIR=/workspace/data 
+
 /etc/init.d/redis-server start
-cd ntopng && ./ntopng -i eth0 -w 0.0.0.0:3000 -d /workspace/data
+
+mkdir $WORKDIR
+chown ntopng:ntopng $WORKDIR
+#chmod 777 $WORKDIR
+ntopng -i eth0 -w 0.0.0.0:3000 -d $WORKDIR

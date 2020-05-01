@@ -1,0 +1,11 @@
+FROM ilm4zz4/ntopng:base
+
+ARG openssl
+ENV OPENSSL_VERSION=${openssl}
+
+WORKDIR /workspace
+
+RUN echo "openssl verion: $OPENSSL_VERSION"
+RUN git clone -b $OPENSSL_VERSION https://github.com/openssl/openssl.git 
+RUN  cd openssl && ./config && make && make install && cd .. && rm -rf openssl 
+
